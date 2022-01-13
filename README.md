@@ -1,2 +1,2 @@
 # Django-Project
-* A project made with the Django FrameWork in Python
+* A Login/Register Page made with the Django Framework in Python
