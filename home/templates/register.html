@@ -6,20 +6,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log-in</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
 </head>
 <body>
     <div class="box">
-        <p align='center' id="title">LOGIN</p>
+        <p align='center' id="title">Register</p>
 
-        <form action="" class="entry" method="post">
+        <form action="register" class="entry" method="POST">
+            {% csrf_token %}
             <p class="label" id="user">Username: </p>
-            <input class="user" type="text">
+            <input class="user" name="username" type="text">
             <p class="label" id="pass">Password: </p>
-            <input class="pass" type="password">
+            <input class="pass" name="password" type="password">
             <p id="warning" align='center'></p>
-            <button id="submit">Log-in</button>
+            <button id="submit">Register</button>
         </form>
 
         </div>

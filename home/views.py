@@ -7,3 +7,9 @@ def index(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def register(request):
+    username = request.POST('username')
+    password = request.POST('password')
+
+    return render(request, 'register.html')
