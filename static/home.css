@@ -1,6 +1,7 @@
 * {
     font-family: sans-serif;
     text-align: center;
+    overflow: auto;
     
 }
 
@@ -9,7 +10,7 @@
 }
 .app {
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 300px 1fr;
     gap: 4vw;
     background-color:rgb(233, 233, 233);
     position:fixed;
@@ -45,8 +46,39 @@
 
 }
 
-.posts {
-    width: 90%;
+ul {
+    justify-content: center;
+    align-items: center;
+}
+
+.post {
+    margin-bottom: 20px;
+    width: 97%;
+    height: 200px;
     background-color: white;
-    height: 30%;
+    grid-template-rows: 1.4fr 1fr 2fr;
+    display: grid;
+}
+
+.box {
+    height: 100%;
+    width: 100%;
+}
+
+#ptitle {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 1vw;
+    text-align: left;
+}
+
+#date {
+    font-size: 15px;
+    margin-left: 1vw;
+    text-align: left;
+}
+
+#thepost {
+    margin-left: 1vw;
+    text-align: left;
 }
