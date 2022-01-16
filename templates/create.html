@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Post</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'create.css' %}">
+</head>
+<body>
+    <div id="app">
+        <a href="..">Go Back</a>
+        <p id="title">Create a New Post.</p>
+        
+        <form id="form" action="" method="post">
+            {% csrf_token %}
+            <div class="entry">
+                <label style='font-size: 20px; color: rgb(94, 94, 94);' for="Input">Title:  </label>
+                <input class="input" style='width:500px; margin-bottom: 20px;' placeholder='Title...' name="Input" type="text">
+            </div>
+            <div class="entry">
+                <p>Write The Post Here:</p>
+                <textarea name="Inputt" class="input" id="textarea" cols="30" rows="15"></textarea>
+            </div>
+            <input type="submit" class="button" value="Submit">
+            <p>{{mensagem}}</p>
+        </form>
+    </div>
+    <script src="{% static 'create.js' %}"></script>
+</body>
+</html>
