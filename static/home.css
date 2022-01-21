@@ -79,6 +79,7 @@ ul {
     height: 200px;
     background-color: white;
     grid-template-rows: 1.4fr 1fr 2fr;
+    grid-template-columns: 85% 1fr 1fr;
     display: grid;
 }
 
@@ -98,16 +99,32 @@ ul {
     font-size: 15px;
     margin-left: 1vw;
     text-align: left;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 #thepost {
     margin-left: 1vw;
     text-align: left;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 #zero {
-    font-size: 2vw;
+    padding: 20px;
+    font-size: 3vw;
     font-weight: 900;
+    text-shadow: 0px 0px 10px #a1a1a1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(255, 255, 255);
+}
+
+#delete {
+    margin: auto;
+    width: 30px;
+}
+
+#edit {
+    width: 30px;
+    margin: auto;
 }

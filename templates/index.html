@@ -22,8 +22,7 @@
         </div>
         {% if quantidade == 0%}
         <div>
-            <p id="zero">We do not have anything to show.</p>
-            <p id="zero">Create a post first.</p>
+            <p id="zero">We do not have anything to show.<br> Create a post first.</p>
         </div>
         
         {% else %}
@@ -33,10 +32,21 @@
                 {% for thepost in posts %}
                 <div class="post">
                     <p id="ptitle">{{thepost.title}}</p>
+                    <input type="image" onclick="Delete('{{thepost.id}}')"  id="delete" src="{% static 'images/delete.png' %}" alt="Delete">
+                    <input type="image" onclick="Edit('{{thepost.id}}')"  id="edit" src="{% static 'images/edit.png' %}" alt="Edit">
+                    {% if thepost.edited == True%}
+                    <p id="date">{{thepost.date}} (edited)</p>
+                    {% else %}
                     <p id="date">{{thepost.date}}</p>
+                    {% endif %}
                     <p id="thepost">{{thepost.post}}</p>
 
                 </div>
+                
+                <form action="" onSubmit="return checkaccept();" class="form{{thepost.id}}" name="delete" style="display: none;" method="post">
+                    {% csrf_token %}
+                    <input type="text" class="input" name='id' value="{{thepost.id}}">
+                </form>
                 {% endfor %}
             
             </ul>
